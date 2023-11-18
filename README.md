@@ -1,6 +1,6 @@
 # Taller de EJS - Electiva II
 
-Desarrollo del taller de electiva 2
+Desarrollo del taller grupal de electiva 2
 
 # Integrantes:
 Diana Sofia Díaz Salamanca
