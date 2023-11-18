@@ -4,7 +4,8 @@
   "description": "Taller de electiva II del motor de plantillas EJS.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "Diana Sofía Diaz Salamanca y Luis Enrique Jr. Pinto Fuentes",
   "license": "ISC",
