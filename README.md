@@ -1,4 +1,4 @@
-# Taller-Electiva-II-EJS
+# Taller de EJS - Electiva II
 
 Desarrollo del taller de electiva 2
 
