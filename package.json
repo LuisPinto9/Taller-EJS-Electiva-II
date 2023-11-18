@@ -1,0 +1,19 @@
+{
+  "name": "taller-electiva-ii-ejs",
+  "version": "1.0.0",
+  "description": "Taller de electiva II del motor de plantillas EJS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diana Sofía Diaz Salamanca y Luis Enrique Jr. Pinto Fuentes",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
