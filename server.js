@@ -15,6 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,"/public")))
 app.use("/", require("./routes/index"))
+app.use("/stock", require("./routes/index"))
 
 app.listen(app.get("PORT"), () =>
   console.log(`Server listen at port ${app.get("PORT")}`)

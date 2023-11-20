@@ -1,24 +1,13 @@
 const router = require("express").Router();
 
-const games = new Map();
-
-games.set(1, { id: "1010", nombre: "COD", tipo: "Shooter", precio: "300000" });
-games.set(2, {
-  id: "2010",
-  nombre: "Warzone",
-  tipo: "Shooter",
-  precio: "250000",
-});
-games.set(3, { id: "3010", nombre: "Halo", tipo: "Shooter", precio: "200000" });
-games.set(4, {
-  id: "4101",
-  nombre: "Fallout",
-  tipo: "Shooter",
-  precio: "300000",
-});
+const components = new Map();
 
 router.get("/", (req, res) =>
-  res.render("index", { title: "Gestión de juegos", games: games })
+  res.render("index", { title: "Gestión de inventario" })
+);
+
+router.get("/stock", (req, res) =>
+  res.render("inventario", { title: "Inventario" })
 );
 
 router.post("/", (req, res) => {
