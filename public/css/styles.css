@@ -2,3 +2,38 @@
     font-size: 5rem;
     text-transform: uppercase;
 }
+
+.btn-add{
+    background-color: #43454A !important;
+    border: #43454A !important;
+    border-radius: 15px !important;
+    text-transform: uppercase;
+}
+
+.btn-add:hover{
+    background-color: #82848a !important;
+}
+
+.btn-modal-add{
+    background-color: #43454A !important;
+    border: #43454A !important;
+    border-radius: 15px !important;
+    text-transform: uppercase;
+}
+
+.btn-modal-add:hover{
+    background-color: #82848a !important;
+}
+
+.btn-modal-cancel{
+    border-radius: 15px !important;
+    text-transform: uppercase;
+}
+
+.back{
+    min-height: 73.1vh;
+}
+
+table{
+    text-align: center !important;
+}
