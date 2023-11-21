@@ -9,6 +9,7 @@
       <div class="container d-flex justify-content-center pt-5">
         <div class="card" style="width: 50rem">
           <div class="card-body">
+            <% if (components.size > 0) { %>
             <div class="table-responsive">
               <table
                 class="table table table-hover table-bordered border border-black rounded"
@@ -26,30 +27,34 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <% var cont = 1; %> <% for (const [k, v] of components) { %>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td scope="row"><%= cont %></td>
+                    <td><%= v.id %></td>
+                    <td><%= v.nombre %></td>
+                    <td><%= v.tipo %></td>
+                    <td><%= v.precio %></td>
+                    <td>
+                      <button
+                        style="border: none; background-color: transparent"
+                      >
+                        <img src="images/editar.png" />
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        style="border: none; background-color: transparent"
+                      >
+                        <img src="images/eliminar.png" />
+                      </button>
+                    </td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>Thornton</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td><button style="border: none; background-color: transparent;"><img src="images/editar.png" /></button></td>
-                    <td><button style="border: none; background-color: transparent;"><img src="images/eliminar.png" /></button></td>
-                  </tr>
+                  <% cont++; %> <% } %>
                 </tbody>
               </table>
+              <% } else { %>
+              <h5 class="text-align-center">No se encontraron juegos</h5>
+              <% } %>
             </div>
             <div class="pt-2"><%-include("templates/modal.ejs") %></div>
           </div>

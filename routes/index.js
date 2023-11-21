@@ -3,11 +3,11 @@ const router = require("express").Router();
 const components = new Map();
 
 router.get("/", (req, res) =>
-  res.render("index", { title: "Gestión de inventario" })
+  res.render("index", { title: "Home" })
 );
 
 router.get("/stock", (req, res) =>
-  res.render("inventario", { title: "Inventario" })
+  res.render("inventario", { title: "Inventario", components:components })
 );
 
 router.post("/", (req, res) => {
