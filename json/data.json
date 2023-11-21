@@ -5,5 +5,12 @@
     "marca": "prueba",
     "cantidad":1,
     "costo": 1
+  },
+  {
+    "id": 2,
+    "nombre": "prueba 2",
+    "marca": "prueba 2",
+    "cantidad":1,
+    "costo": 1
   }
 ]

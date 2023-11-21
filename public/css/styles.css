@@ -38,6 +38,11 @@ table {
   text-align: center !important;
 }
 
+table>tr {
+  
+  background-color: red !important;
+}
+
 /* @media (max-width: 700px) {
     .test {
       display: block;
