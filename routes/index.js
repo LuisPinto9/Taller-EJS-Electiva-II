@@ -1,7 +1,37 @@
+// const router = require("express").Router();
+// const fs = require("fs");
+
+// const data = Object.values(JSON.parse(fs.readFileSync('./json/data.json')))
+
+// router.get("/", (req, res) => res.render("index", { title: "Home" }));
+
+// router.get("/stock", (req, res) =>
+//   res.render("inventario", { title: "Inventario", components: data })
+// );
+
+// router.post("/", (req, res) => {
+//   const { id, name, type, price } = req.body;
+//   const newGame = {
+//     id: id,
+//     nombre: name,
+//     tipo: type,
+//     precio: price,
+//   };
+//   const newId = games.size + 1;
+//   games.set(newId, newGame);
+//   res.sendStatus(200);
+// });
+
+// module.exports = router;
+
+
 const router = require("express").Router();
 const fs = require("fs");
+const path = require("path");
 
-const data = Object.values(JSON.parse(fs.readFileSync('./json/data.json')))
+const dataFilePath = path.join(__dirname, '../json/data.json');
+
+let data = Object.values(JSON.parse(fs.readFileSync(dataFilePath)));
 
 router.get("/", (req, res) => res.render("index", { title: "Home" }));
 
@@ -10,16 +40,21 @@ router.get("/stock", (req, res) =>
 );
 
 router.post("/", (req, res) => {
-  const { id, name, type, price } = req.body;
-  const newGame = {
+  const { id, nombre, marca, cantidad, costo } = req.body;
+
+  const newComponent = {
     id: id,
-    nombre: name,
-    tipo: type,
-    precio: price,
+    nombre: nombre,
+    marca: marca,
+    cantidad: cantidad,
+    costo: costo,
   };
-  const newId = games.size + 1;
-  games.set(newId, newGame);
+
+  data.push(newComponent);
+
+  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+
   res.sendStatus(200);
 });
-
 module.exports = router;
+

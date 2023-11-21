@@ -38,7 +38,7 @@
             class="form-control"
             placeholder="Id"
             aria-label="Id"
-            id="id"
+            id="modalId"
           />
         </div>
 
@@ -48,7 +48,7 @@
             class="form-control"
             placeholder="Nombre"
             aria-label="Nombre"
-            id="nombre"
+            id="modalNombre"
           />
         </div>
 
@@ -56,9 +56,9 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Tipo"
-            aria-label="Tipo"
-            id="tipo"
+            placeholder="Marca"
+            aria-label="Marca"
+            id="modalMarca"
           />
         </div>
 
@@ -66,9 +66,19 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Precio"
-            aria-label="Precio"
-            id="precio"
+            placeholder="Cantidad"
+            aria-label="Cantidad"
+            id="modalCantidad"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Costo"
+            aria-label="Costo"
+            id="modalCosto"
           />
         </div>
       </div>
@@ -76,7 +86,9 @@
         <button type="button" class="btn btn-danger btn-modal-cancel" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary btn-modal-add">Confirmar</button>
+        <button type="button" class="btn btn-primary btn-modal-add" onclick="add()">Confirmar</button>
+
+        <!-- <button type="button" class="btn btn-primary btn-modal-add">Confirmar</button> -->
       </div>
     </div>
   </div>
