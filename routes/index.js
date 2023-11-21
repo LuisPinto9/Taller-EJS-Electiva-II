@@ -1,14 +1,12 @@
 const router = require("express").Router();
 const fs = require("fs");
 
-const data = JSON.parse(fs.readFileSync('./json/data.json'))
-
-const components = new Map(Object.entries(data))
+const data = Object.values(JSON.parse(fs.readFileSync('./json/data.json')))
 
 router.get("/", (req, res) => res.render("index", { title: "Home" }));
 
 router.get("/stock", (req, res) =>
-  res.render("inventario", { title: "Inventario", components: components })
+  res.render("inventario", { title: "Inventario", components: data })
 );
 
 router.post("/", (req, res) => {

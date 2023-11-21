@@ -9,7 +9,7 @@
       <div class="container d-flex justify-content-center pt-5">
         <div class="card" style="width: 50rem">
           <div class="card-body">
-            <% if (components.size > 0) { %>
+            <% if (components && components.length > 0) { %>
             <div class="table-responsive">
               <table
                 class="table table table-hover table-bordered border border-black rounded"
@@ -27,14 +27,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% var cont = 1; %> <% for (const [k, v] of components) { %>
+                  <% var cont = 1; %> 
+                  <% components.forEach((object) => { %>
                   <tr>
-                    <td scope="row"><%= cont %></td>
-                    <td><%= v.id %></td>
-                    <td><%= v.nombre %></td>
-                    <td><%= v.marca %></td>
-                    <td><%= v.cantidad %></td>
-                    <td><%= v.costo %></td>
+                    <td scope="row"><%= cont%></td>
+                    <td><%= object.id %></td>
+                    <td><%= object.nombre %></td>
+                    <td><%= object.marca %></td>
+                    <td><%= object.cantidad %></td>
+                    <td><%= object.costo %></td>
                     <td>
                       <button
                         style="border: none; background-color: transparent"
@@ -50,7 +51,7 @@
                       </button>
                     </td>
                   </tr>
-                  <% cont++; %> <% } %>
+                  <% cont++; %> <% }) %>
                 </tbody>
               </table>
               <% } else { %>
