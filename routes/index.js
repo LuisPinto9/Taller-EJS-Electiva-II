@@ -1,13 +1,25 @@
 const router = require("express").Router();
+const fs = require("fs");
 
-const components = new Map();
+const data = JSON.parse(fs.readFileSync('./json/data.json'))
+// fs.readFile("./json/data.json", "utf8", (err, data) => {
+//   if (err) {
+//     console.error("Error al leer el archivo:", err);
+//     return;
+//   }
+//   try {
+//     data = JSON.parse(data);
+//   } catch (error) {
+//     console.error("Error al analizar el JSON:", error);
+//   }
+// });
 
-router.get("/", (req, res) =>
-  res.render("index", { title: "Home" })
-);
+const components = new Map(Object.entries(data))
+
+router.get("/", (req, res) => res.render("index", { title: "Home" }));
 
 router.get("/stock", (req, res) =>
-  res.render("inventario", { title: "Inventario", components:components })
+  res.render("inventario", { title: "Inventario", components: components })
 );
 
 router.post("/", (req, res) => {
@@ -20,7 +32,7 @@ router.post("/", (req, res) => {
   };
   const newId = games.size + 1;
   games.set(newId, newGame);
-  res.sendStatus(200)
+  res.sendStatus(200);
 });
 
 module.exports = router;

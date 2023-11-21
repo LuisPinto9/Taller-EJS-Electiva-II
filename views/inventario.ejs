@@ -32,8 +32,9 @@
                     <td scope="row"><%= cont %></td>
                     <td><%= v.id %></td>
                     <td><%= v.nombre %></td>
-                    <td><%= v.tipo %></td>
-                    <td><%= v.precio %></td>
+                    <td><%= v.marca %></td>
+                    <td><%= v.cantidad %></td>
+                    <td><%= v.costo %></td>
                     <td>
                       <button
                         style="border: none; background-color: transparent"
@@ -53,10 +54,10 @@
                 </tbody>
               </table>
               <% } else { %>
-              <h5 class="text-align-center">No se encontraron juegos</h5>
+              <h5 class="text-align-center">No se encontraron objetos</h5>
               <% } %>
             </div>
-            <div class="pt-2"><%-include("templates/modal.ejs") %></div>
+            <div class="p-2"><%-include("templates/modal.ejs") %></div>
           </div>
         </div>
       </div>
