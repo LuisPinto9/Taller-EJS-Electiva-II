@@ -5,19 +5,16 @@
   </head>
   <body>
     <%- include("templates/navbar.ejs") %>
-    <div class="d-flex p-5">
-      <div class="col-6 d-flex align-items-center">
-        <h1 class="title-home">Gestión de inventario</h1>
+    <div class="back">
+      <div class="d-flex flex-wrap pb-0">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <h1 class="title-home">Gestión de inventario</h1>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+          <img class="img-fluid" src="images/imagen1.png" style=" height: 90%;"/>
+        </div>
       </div>
-      <div class="col-6">
-        <img class="img-fluid" src="images/imagen1.png" />
-      </div>
-      
     </div>
-    <footer>
-        <%- include("templates/footer.ejs") %>
-    </footer>
-    
+    <footer><%- include("templates/footer.ejs") %></footer>
   </body>
-
 </html>

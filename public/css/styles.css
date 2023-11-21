@@ -1,39 +1,49 @@
-.title-home{
-    font-size: 5rem;
-    text-transform: uppercase;
+.title-home {
+  /* font-size: 5rem; */
+  text-transform: uppercase;
 }
 
-.btn-add{
-    background-color: #43454A !important;
-    border: #43454A !important;
-    border-radius: 15px !important;
-    text-transform: uppercase;
+.btn-add {
+  background-color: #43454a !important;
+  border: #43454a !important;
+  border-radius: 15px !important;
+  text-transform: uppercase;
 }
 
-.btn-add:hover{
-    background-color: #82848a !important;
+.btn-add:hover {
+  background-color: #82848a !important;
 }
 
-.btn-modal-add{
-    background-color: #43454A !important;
-    border: #43454A !important;
-    border-radius: 15px !important;
-    text-transform: uppercase;
+.btn-modal-add {
+  background-color: #43454a !important;
+  border: #43454a !important;
+  border-radius: 15px !important;
+  text-transform: uppercase;
 }
 
-.btn-modal-add:hover{
-    background-color: #82848a !important;
+.btn-modal-add:hover {
+  background-color: #82848a !important;
 }
 
-.btn-modal-cancel{
-    border-radius: 15px !important;
-    text-transform: uppercase;
+.btn-modal-cancel {
+  border-radius: 15px !important;
+  text-transform: uppercase;
 }
 
-.back{
-    min-height: 78.1vh;
+.back {
+  min-height: 82.65vh;
 }
 
-table{
-    text-align: center !important;
+table {
+  text-align: center !important;
 }
+
+/* @media (max-width: 700px) {
+    .test {
+      display: block;
+    }
+    .title-home{
+        color: blue;
+        font-size: small;
+    }
+  } */

@@ -2,17 +2,6 @@ const router = require("express").Router();
 const fs = require("fs");
 
 const data = JSON.parse(fs.readFileSync('./json/data.json'))
-// fs.readFile("./json/data.json", "utf8", (err, data) => {
-//   if (err) {
-//     console.error("Error al leer el archivo:", err);
-//     return;
-//   }
-//   try {
-//     data = JSON.parse(data);
-//   } catch (error) {
-//     console.error("Error al analizar el JSON:", error);
-//   }
-// });
 
 const components = new Map(Object.entries(data))
 
