@@ -1,19 +1,21 @@
 function drop(button) {
+  console.log("Drop function called");
   const id = button.getAttribute("data-id");
   const xhr = new XMLHttpRequest();
-    xhr.open("DELETE", "/", true);
-    xhr.setRequestHeader(
-      "Content-Type",
-      "application/x-www-form-urlencoded",
-      true
-    );
-    xhr.onreadystatechange = () => {
-      if ((xhr.readyState == 4) & (xhr.status == 200)) {
+  xhr.open("DELETE", `/stock/${id}`, true);
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
         console.log(xhr.responseText);
+        window.location.reload(); // Recarga la página después de eliminar
+      } else {
+        console.error('Error al eliminar el componente:', xhr.status);
       }
-    };
-    xhr.send(`id=${id}`);
+    }
+  };
+  xhr.send();
 }
+
 
 
 function add() {
@@ -31,7 +33,7 @@ function add() {
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
         console.log(xhr.responseText);
-        window.location.href = "/stock"; // Redirecciona después de agregar
+        window.location.href = "/stock"; 
       }
     };
 
@@ -48,42 +50,6 @@ function add() {
     alert("Uno o varios campos están vacíos");
   }
 }
-
-// function add() {
-//   const id = document.getElementById("id").value;
-//   const name = document.getElementById("nombre").value;
-//   const type = document.getElementById("tipo").value;
-//   const price = document.getElementById("precio").value;
-
-//   if ((id != "") & (name != "") & (type != "") & (price != "")) {
-//     const xhr = new XMLHttpRequest();
-//     xhr.open("POST", "/", true);
-//     xhr.setRequestHeader(
-//       "Content-Type",
-//       "application/x-www-form-urlencoded",
-//       true
-//     );
-//     xhr.onreadystatechange = () => {
-//       if ((xhr.readyState == 4) & (xhr.status == 200)) {
-//         console.log(xhr.responseText);
-//       }
-//     };
-//     xhr.send(id=${id}&name=${name}&type=${type}&price=${price});
-
-//     document.getElementById("id").value = "";
-//     document.getElementById("nombre").value = "";
-//     document.getElementById("tipo").value = "";
-//     document.getElementById("precio").value = "";
-//     window.location.href = "/";
-//   } else {
-//     alert("Uno o varios campos están vacios");
-//   }
-// }
-
-function update() {
-}
-
-
 
 
 

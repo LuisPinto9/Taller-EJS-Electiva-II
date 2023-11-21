@@ -12,12 +12,5 @@
     "marca": "prueba 2",
     "cantidad": 1,
     "costo": 1
-  },
-  {
-    "id": "4",
-    "nombre": "aa",
-    "marca": "aa",
-    "cantidad": "12",
-    "costo": "1"
   }
 ]

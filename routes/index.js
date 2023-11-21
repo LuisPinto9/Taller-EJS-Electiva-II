@@ -39,6 +39,21 @@ router.get("/stock", (req, res) =>
   res.render("inventario", { title: "Inventario", components: data })
 );
 
+router.delete("/stock/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("Delete request received for ID:", id);
+  const index = data.findIndex((component) => component.id === id);
+  if (index !== -1) {
+    data.splice(index, 1);
+
+    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(404); 
+  }
+});
+
 router.post("/", (req, res) => {
   const { id, nombre, marca, cantidad, costo } = req.body;
 
