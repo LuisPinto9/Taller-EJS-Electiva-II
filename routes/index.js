@@ -95,8 +95,5 @@ router.put("/stock/:id", (req, res) => {
 });
 
 
-
-
-
 module.exports = router;
 

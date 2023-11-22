@@ -1,13 +1,13 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "nombre": "prueba",
     "marca": "prueba",
     "cantidad": 1,
     "costo": 1
   },
   {
-    "id": 2,
+    "id": "2",
     "nombre": "prueba 2",
     "marca": "prueba 2",
     "cantidad": 1,
@@ -16,42 +16,42 @@
   {
     "id": "4",
     "nombre": "aa",
-    "marca": "aaa",
+    "marca": "aaaaaa",
     "cantidad": "1",
     "costo": "1"
   },
   {
-    "id": "55",
-    "nombre": "aazz",
+    "id": "5",
+    "nombre": "aazzzzzzzz",
     "marca": "aa",
     "cantidad": "1",
     "costo": "2"
   },
   {
-    "id": "33",
+    "id": "6",
     "nombre": "aa",
-    "marca": "a",
+    "marca": "aaaaaa",
     "cantidad": "1",
     "costo": "2"
   },
   {
-    "id": "44",
+    "id": "7",
     "nombre": "aa",
     "marca": "aa",
     "cantidad": "1",
     "costo": "2"
   },
   {
-    "id": "222",
-    "nombre": "aa",
-    "marca": "aa",
-    "cantidad": "1",
-    "costo": "1"
-  },
-  {
-    "id": "11",
+    "id": "8",
     "nombre": "qqaaa",
     "marca": "aa",
+    "cantidad": "1",
+    "costo": "1"
+  },
+  {
+    "id": "9",
+    "nombre": "qqa",
+    "marca": "a",
     "cantidad": "1",
     "costo": "1"
   }
