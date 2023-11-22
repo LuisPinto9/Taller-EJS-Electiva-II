@@ -71,5 +71,32 @@ router.post("/", (req, res) => {
 
   res.sendStatus(200);
 });
+
+router.put("/stock/:id", (req, res) => {
+  const idParam = req.params.id;
+  const { nombre, marca, cantidad, costo } = req.body;
+
+  const index = data.findIndex((component) => component.id === idParam);
+
+  if (index !== -1) {
+    data[index] = {
+      id: idParam,
+      nombre: nombre,
+      marca: marca,
+      cantidad: cantidad,
+      costo: costo,
+    };
+
+    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+    res.sendStatus(200);
+  } else {
+    res.status(404).send("Componente no encontrado");
+  }
+});
+
+
+
+
+
 module.exports = router;
 

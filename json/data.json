@@ -12,5 +12,47 @@
     "marca": "prueba 2",
     "cantidad": 1,
     "costo": 1
+  },
+  {
+    "id": "4",
+    "nombre": "aa",
+    "marca": "aaa",
+    "cantidad": "1",
+    "costo": "1"
+  },
+  {
+    "id": "55",
+    "nombre": "aazz",
+    "marca": "aa",
+    "cantidad": "1",
+    "costo": "2"
+  },
+  {
+    "id": "33",
+    "nombre": "aa",
+    "marca": "a",
+    "cantidad": "1",
+    "costo": "2"
+  },
+  {
+    "id": "44",
+    "nombre": "aa",
+    "marca": "aa",
+    "cantidad": "1",
+    "costo": "2"
+  },
+  {
+    "id": "222",
+    "nombre": "aa",
+    "marca": "aa",
+    "cantidad": "1",
+    "costo": "1"
+  },
+  {
+    "id": "11",
+    "nombre": "qqaaa",
+    "marca": "aa",
+    "cantidad": "1",
+    "costo": "1"
   }
 ]
