@@ -1,6 +1,32 @@
 .title-home {
-  /* font-size: 5rem; */
+  font-size: 5rem; /* Utilizando vw como medida relativa */
+  text-align: center; /* Alineación centrada */
   text-transform: uppercase;
+  font-family: "Open Sans";
+  font-weight: 600; /* Un valor más alto para un texto aún más grueso */
+}
+
+/* Media query para ajustar el tamaño en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .title-home {
+    font-size: 3rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 960px) {
+  .title-home {
+    font-size: 2rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 194px) {
+  .title-home {
+    font-size: 1rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+  }
+}
+
+.img {
+  justify-content: right;
 }
 
 .btn-add {
@@ -31,15 +57,14 @@
 }
 
 .back {
-  min-height: 82.65vh;
+  min-height: 82.35vh;
 }
 
 table {
   text-align: center !important;
 }
 
-table>tr {
-  
+table > tr {
   background-color: red !important;
 }
 
