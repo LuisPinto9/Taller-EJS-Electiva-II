@@ -49,12 +49,12 @@ function add() {
   }
 }
 
-function edit(id) {
-  const id = document.getElementById(`modalId${id}`).value;
-  const nombre = document.getElementById(`modalNombre${id}`).value;
-  const marca = document.getElementById(`modalMarca${id}`).value;
-  const cantidad = document.getElementById(`modalCantidad${id}`).value;
-  const costo = document.getElementById(`modalCosto${id}`).value;
+function edit(id2) {
+  const id = document.getElementById(`modalId${id2}`).value;
+  const nombre = document.getElementById(`modalNombre${id2}`).value;
+  const marca = document.getElementById(`modalMarca${id2}`).value;
+  const cantidad = document.getElementById(`modalCantidad${id2}`).value;
+  const costo = document.getElementById(`modalCosto${id2}`).value;
 
   if (id && nombre && marca && cantidad && costo) {
     const xhr = new XMLHttpRequest();
