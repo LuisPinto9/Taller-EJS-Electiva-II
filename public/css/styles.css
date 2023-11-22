@@ -60,20 +60,27 @@
   min-height: 82.35vh;
 }
 
+.table-responsive {
+  max-height: 53.35vh !important; /* Define la altura máxima para el contenedor */
+  overflow-y: auto !important; /* Agrega la barra de desplazamiento vertical cuando sea necesario */
+  padding-right: 4px;
+}
+
+.table-responsive::-webkit-scrollbar {
+  padding-left: 3px;
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #43454a; /* Color del "pulgarcito" de la barra de desplazamiento */
+  border-radius: 8px; /* Redondea las esquinas del "pulgarcito" */
+}
+
 table {
   text-align: center !important;
 }
-
-table > tr {
-  background-color: red !important;
-}
-
-/* @media (max-width: 700px) {
-    .test {
-      display: block;
-    }
-    .title-home{
-        color: blue;
-        font-size: small;
-    }
-  } */

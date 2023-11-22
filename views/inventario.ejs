@@ -37,15 +37,13 @@
                     <td><%= object.costo %></td>
                     <td>
                       <button
-                            style="border: none; background-color: transparent"
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#staticBackdropEditar<%= object.id %>"
-                          >
+                        style="border: none; background-color: transparent"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdropEditar<%= object.id %>"
+                      >
                         <img src="images/editar.png" />
                       </button>
-
-                      <!-- Modal -->
                       <div
                         class="modal fade"
                         id="staticBackdropEditar<%= object.id %>"
@@ -83,7 +81,7 @@
                                   readonly
                                 />
                               </div>
-                    
+
                               <div class="input-group mb-3">
                                 <input
                                   type="text"
@@ -94,7 +92,7 @@
                                   value="<%= object.nombre %>"
                                 />
                               </div>
-                    
+
                               <div class="input-group mb-3">
                                 <input
                                   type="text"
@@ -105,7 +103,7 @@
                                   value="<%= object.marca %>"
                                 />
                               </div>
-                      
+
                               <div class="input-group mb-3">
                                 <input
                                   type="text"
@@ -116,7 +114,7 @@
                                   value="<%= object.cantidad %>"
                                 />
                               </div>
-                      
+
                               <div class="input-group mb-3">
                                 <input
                                   type="text"
@@ -138,8 +136,8 @@
                               </button>
                               <button
                                 type="button"
-                                class="btn btn-primary btn-modal-add" onclick="edit('<%= object.id %>')"
-                                
+                                class="btn btn-primary btn-modal-add"
+                                onclick="edit('<%= object.id %>')"
                               >
                                 Confirmar
                               </button>

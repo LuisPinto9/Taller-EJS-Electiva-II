@@ -1,15 +1,13 @@
 function drop(button) {
-  console.log("Drop function called");
   const id = button.getAttribute("data-id");
   const xhr = new XMLHttpRequest();
   xhr.open("DELETE", `/stock/${id}`, true);
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
-        console.log(xhr.responseText);
-        window.location.reload(); 
+        window.location.reload();
       } else {
-        console.error('Error al eliminar el componente:', xhr.status);
+        console.error("Error al eliminar el componente:", xhr.status);
       }
     }
   };
@@ -30,8 +28,7 @@ function add() {
 
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText);
-        window.location.href = "/stock"; 
+        window.location.href = "/stock";
       }
     };
 
@@ -60,11 +57,9 @@ function edit(id2) {
     const xhr = new XMLHttpRequest();
     xhr.open("PUT", `/stock/${id}`, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText);
-        window.location.href = "/stock"; 
+        window.location.href = "/stock";
       }
     };
 
@@ -81,7 +76,3 @@ function edit(id2) {
     alert("Uno o varios campos están vacíos");
   }
 }
-
-
-
-
