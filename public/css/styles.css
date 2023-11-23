@@ -1,27 +1,41 @@
-.title-home {
-  font-size: 5rem; /* Utilizando vw como medida relativa */
-  text-align: center; /* Alineación centrada */
-  text-transform: uppercase;
-  font-family: "Open Sans";
-  font-weight: 600; /* Un valor más alto para un texto aún más grueso */
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-/* Media query para ajustar el tamaño en pantallas más pequeñas */
+body {
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.title-home {
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .title-home {
-    font-size: 3rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 960px) {
   .title-home {
-    font-size: 2rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 207px) {
   .title-home {
-    font-size: 1rem; /* Tamaño de letra más pequeño para pantallas más pequeñas */
+    font-size: 1rem;
   }
 }
 
@@ -56,29 +70,25 @@
   text-transform: uppercase;
 }
 
-.back {
-  min-height: 82.35vh;
-}
-
 .table-responsive {
-  max-height: 53.35vh !important; /* Define la altura máxima para el contenedor */
-  overflow-y: auto !important; /* Agrega la barra de desplazamiento vertical cuando sea necesario */
+  max-height: 53.35vh !important;
+  overflow-y: auto !important;
   padding-right: 4px;
 }
 
 .table-responsive::-webkit-scrollbar {
   padding-left: 3px;
-  width: 10px; /* Ancho de la barra de desplazamiento */
+  width: 10px;
 }
 
 .table-responsive::-webkit-scrollbar-track {
-  background-color: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+  background-color: #f1f1f1;
   border-radius: 10px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-  background-color: #43454a; /* Color del "pulgarcito" de la barra de desplazamiento */
-  border-radius: 8px; /* Redondea las esquinas del "pulgarcito" */
+  background-color: #43454a;
+  border-radius: 8px;
 }
 
 table {
