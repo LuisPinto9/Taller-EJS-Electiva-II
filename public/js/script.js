@@ -42,7 +42,7 @@ function add() {
         } else {
           Swal.fire({
             title: "Error",
-            text: "Hubo un problema al agregar el componente. Por favor, inténtalo de nuevo.",
+            text: "Ya existe un componente con el mismo ID. Por favor, utiliza un ID único",
             icon: "error",
           });
         }
@@ -61,12 +61,12 @@ function add() {
   } else {
     Swal.fire({
       title: "Campos Inválidos",
-      text: "Por favor, completa todos los campos correctamente antes de confirmar.",
+      text: "complete los campos correctamente antes de confirmar:  Letras para NOMBRE y MARCA; numeros para ID, CANTIDAD y COSTO",
       icon: "error",
     });
   }
 }
- 
+
 function edit(id2) {
   const id = document.getElementById(`modalId${id2}`).value;
   const nombre = document.getElementById(`modalNombre${id2}`).value;
