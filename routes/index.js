@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const fs = require("fs");
 const path = require("path");
-
 const dataFilePath = path.join(__dirname, "../json/data.json");
 
 let data = Object.values(JSON.parse(fs.readFileSync(dataFilePath)));
@@ -36,14 +35,14 @@ router.post("/", (req, res) => {
       cantidad: cantidad,
       costo: costo,
     };
-  
+
     data.push(newComponent);
-  
+
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
-  
+
     res.sendStatus(200);
-  } else{
-    res.send(500)
+  } else {
+    res.sendStatus(409);
   }
 });
 

@@ -1,18 +1,40 @@
-
 function drop(button) {
   const id = button.getAttribute("data-id");
-  const xhr = new XMLHttpRequest();
-  xhr.open("DELETE", `/stock/${id}`, true);
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        window.location.reload();
-      } else {
-        console.error("Error al eliminar el componente:", xhr.status);
-      }
+  const nombreComponente = button.getAttribute("data-nombre");
+
+  Swal.fire({
+    title: "¿Está seguro?",
+    html: `¿Desea eliminar el componente <strong>${nombreComponente}</strong>?`,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí, eliminar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const xhr = new XMLHttpRequest();
+      xhr.open("DELETE", `/stock/${id}`, true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            Swal.fire({
+              title: "Exito",
+              text: "El componente se ha eliminado correctamente.",
+              icon: "success",
+            }).then(() => {
+              window.location.href = "/stock";
+            });
+          } else {
+            Swal.fire({
+              title: "Error",
+              text: "Hubo un problema al eliminar el componente.",
+              icon: "error",
+            });
+          }
+        }
+      };
+      xhr.send();
     }
-  };
-  xhr.send();
+  });
 }
 
 function add() {
@@ -28,7 +50,6 @@ function add() {
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "/stock", true);
     xhr.setRequestHeader("Content-Type", "application/json");
-
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4) {
         if (xhr.status == 200) {
@@ -42,7 +63,7 @@ function add() {
         } else {
           Swal.fire({
             title: "Error",
-            text: "Ya existe un componente con el mismo ID. Por favor, utiliza un ID único",
+            text: "Ya existe un componente con el mismo ID. Por favor, utiliza un ID único.",
             icon: "error",
           });
         }
@@ -61,7 +82,13 @@ function add() {
   } else {
     Swal.fire({
       title: "Campos Inválidos",
-      text: "complete los campos correctamente antes de confirmar:  Letras para NOMBRE y MARCA; numeros para ID, CANTIDAD y COSTO",
+      html: `
+        <p>Complete los campos correctamente antes de confirmar:</p>
+        <ul style="text-align: left; list-style-position: inside;">
+          <li>Letras para <strong>NOMBRE</strong> y <strong>MARCA</strong>.</li>
+          <li>Números para <strong>ID</strong>, <strong>CANTIDAD</strong> y <strong>COSTO</strong>.</li>
+          <li>Sin campos vacíos.</li>
+        </ul>`,
       icon: "error",
     });
   }
@@ -80,7 +107,6 @@ function edit(id2) {
     const xhr = new XMLHttpRequest();
     xhr.open("PUT", `/stock/${id}`, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4) {
         if (xhr.status == 200) {
@@ -94,7 +120,7 @@ function edit(id2) {
         } else {
           Swal.fire({
             title: "Error",
-            text: "Hubo un problema al actualizar el componente",
+            text: "Hubo un problema al actualizar el componente.",
             icon: "error",
           });
         }
@@ -109,12 +135,17 @@ function edit(id2) {
       costo: costo,
     };
 
-
     xhr.send(JSON.stringify(data));
   } else {
     Swal.fire({
       title: "Campos Inválidos",
-      text: "Por favor, completa todos los campos correctamente antes de confirmar.",
+      html: `
+        <p>Complete los campos correctamente antes de confirmar:</p>
+        <ul style="text-align: left; list-style-position: inside;">
+          <li>Letras para <strong>NOMBRE</strong> y <strong>MARCA</strong>.</li>
+          <li>Números para <strong>ID</strong>, <strong>CANTIDAD</strong> y <strong>COSTO</strong>.</li>
+          <li>Sin campos vacíos.</li>
+        </ul>`,
       icon: "error",
     });
   }
@@ -136,4 +167,3 @@ function validateInputs(id, nombre, marca, cantidad, costo) {
 
   return errors;
 }
-

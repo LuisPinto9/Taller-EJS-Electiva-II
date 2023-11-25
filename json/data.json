@@ -1,58 +1,30 @@
 [
   {
-    "id": "1",
-    "nombre": "prueba",
-    "marca": "prueba",
-    "cantidad": 1,
-    "costo": 1
-  },
-  {
-    "id": "2",
-    "nombre": "prueba 2",
-    "marca": "prueba 2",
-    "cantidad": 1,
-    "costo": 1
-  },
-  {
-    "id": "4",
-    "nombre": "aa",
-    "marca": "aaaaaa",
+    "id": "1001",
+    "nombre": "Mesa",
+    "marca": "Ninguna",
     "cantidad": "1",
-    "costo": "1"
+    "costo": "100000"
   },
   {
-    "id": "5",
-    "nombre": "aazzzzzzzz",
-    "marca": "aa",
-    "cantidad": "1",
-    "costo": "2"
+    "id": "1002",
+    "nombre": "Silla",
+    "marca": "MarcaX",
+    "cantidad": "4",
+    "costo": "25000"
   },
   {
-    "id": "6",
-    "nombre": "aa",
-    "marca": "aaaaaa",
-    "cantidad": "1",
-    "costo": "2"
+    "id": "1003",
+    "nombre": "Puerta",
+    "marca": "MarcaY",
+    "cantidad": "2",
+    "costo": "80000"
   },
   {
-    "id": "7",
-    "nombre": "aa",
-    "marca": "aa",
+    "id": "1004",
+    "nombre": "Escritorio",
+    "marca": "MarcaZ",
     "cantidad": "1",
-    "costo": "2"
-  },
-  {
-    "id": "8",
-    "nombre": "qqaaa",
-    "marca": "aa",
-    "cantidad": "1",
-    "costo": "1"
-  },
-  {
-    "id": "9",
-    "nombre": "qqa",
-    "marca": "a",
-    "cantidad": "1",
-    "costo": "1"
+    "costo": "100000"
   }
 ]

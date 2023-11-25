@@ -26,14 +26,15 @@
                 </tr>
               </thead>
               <tbody>
-                <% var cont = 1; %> <% components.forEach((object) => { %>
+                <% var cont = 1; %> <% components.sort((a, b) => a.id -
+                b.id).forEach((object) => { %>
                 <tr>
                   <td scope="row"><%= cont%></td>
                   <td><%= object.id %></td>
                   <td><%= object.nombre %></td>
                   <td><%= object.marca %></td>
                   <td><%= object.cantidad %></td>
-                  <td><%= object.costo %></td>
+                  <td>$<%= Number(object.costo).toLocaleString('es-ES') %></td>
                   <td>
                     <button
                       style="border: none; background-color: transparent"
@@ -150,6 +151,7 @@
                       style="border: none; background-color: transparent"
                       onclick="drop(this)"
                       data-id="<%= object.id %>"
+                      data-nombre="<%= object.nombre %>"
                     >
                       <img src="images/eliminar.png" />
                     </button>
@@ -159,7 +161,7 @@
               </tbody>
             </table>
             <% } else { %>
-            <h5 class="text-align-center">No se encontraron objetos</h5>
+            <h5 class="text-align-center">No se encontraron componentes</h5>
             <% } %>
           </div>
           <div class="p-2"><%-include("templates/modal.ejs") %></div>
