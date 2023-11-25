@@ -1,5 +1,4 @@
 
-
 function drop(button) {
   const id = button.getAttribute("data-id");
   const xhr = new XMLHttpRequest();
@@ -16,39 +15,6 @@ function drop(button) {
   xhr.send();
 }
 
-//  function add() {
-//   const id = document.getElementById("modalId").value;
-//   const nombre = document.getElementById("modalNombre").value;
-//   const marca = document.getElementById("modalMarca").value;
-//   const cantidad = document.getElementById("modalCantidad").value;
-//   const costo = document.getElementById("modalCosto").value;
-
-//   if (id && nombre && marca && cantidad && costo) {
-//     const xhr = new XMLHttpRequest();
-//     xhr.open("POST", "/stock", true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-
-//     xhr.onreadystatechange = () => {
-//       if (xhr.readyState == 4 && xhr.status == 200) {
-//         window.location.href = "/stock";
-//       }
-//     };
-
-//     const data = {
-//       id: id,
-//       nombre: nombre,
-//       marca: marca,
-//       cantidad: cantidad,
-//       costo: costo,
-//     };
-
-//     xhr.send(JSON.stringify(data));
-//   } else {
-//     alert("Uno o varios campos están vacíos");
-//   }
-// }
-
-
 function add() {
   const id = document.getElementById("modalId").value;
   const nombre = document.getElementById("modalNombre").value;
@@ -64,9 +30,22 @@ function add() {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = () => {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText);
-        window.location.href = "/stock";
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          Swal.fire({
+            title: "Exito",
+            text: "El componente se ha agregado correctamente.",
+            icon: "success",
+          }).then(() => {
+            window.location.href = "/stock";
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "Hubo un problema al agregar el componente. Por favor, inténtalo de nuevo.",
+            icon: "error",
+          });
+        }
       }
     };
 
@@ -80,10 +59,66 @@ function add() {
 
     xhr.send(JSON.stringify(data));
   } else {
-    alert("Por favor, completa todos los campos correctamente antes de confirmar.");
+    Swal.fire({
+      title: "Campos Inválidos",
+      text: "Por favor, completa todos los campos correctamente antes de confirmar.",
+      icon: "error",
+    });
   }
 }
+ 
+function edit(id2) {
+  const id = document.getElementById(`modalId${id2}`).value;
+  const nombre = document.getElementById(`modalNombre${id2}`).value;
+  const marca = document.getElementById(`modalMarca${id2}`).value;
+  const cantidad = document.getElementById(`modalCantidad${id2}`).value;
+  const costo = document.getElementById(`modalCosto${id2}`).value;
 
+  const errors = validateInputs(id, nombre, marca, cantidad, costo);
+
+  if (Object.values(errors).every((error) => !error)) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("PUT", `/stock/${id}`, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          Swal.fire({
+            title: "Exito",
+            text: "El componente se ha actualizado correctamente.",
+            icon: "success",
+          }).then(() => {
+            window.location.href = "/stock";
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "Hubo un problema al actualizar el componente",
+            icon: "error",
+          });
+        }
+      }
+    };
+
+    const data = {
+      id: id,
+      nombre: nombre,
+      marca: marca,
+      cantidad: cantidad,
+      costo: costo,
+    };
+
+
+    xhr.send(JSON.stringify(data));
+  } else {
+    Swal.fire({
+      title: "Campos Inválidos",
+      text: "Por favor, completa todos los campos correctamente antes de confirmar.",
+      icon: "error",
+    });
+  }
+}
 
 function validateInputs(id, nombre, marca, cantidad, costo) {
   const idPattern = /^\d+$/;
@@ -102,33 +137,3 @@ function validateInputs(id, nombre, marca, cantidad, costo) {
   return errors;
 }
 
-function edit(id2) {
-  const id = document.getElementById(`modalId${id2}`).value;
-  const nombre = document.getElementById(`modalNombre${id2}`).value;
-  const marca = document.getElementById(`modalMarca${id2}`).value;
-  const cantidad = document.getElementById(`modalCantidad${id2}`).value;
-  const costo = document.getElementById(`modalCosto${id2}`).value;
-
-  if (id && nombre && marca && cantidad && costo) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("PUT", `/stock/${id}`, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        window.location.href = "/stock";
-      }
-    };
-
-    const data = {
-      id: id,
-      nombre: nombre,
-      marca: marca,
-      cantidad: cantidad,
-      costo: costo,
-    };
-
-    xhr.send(JSON.stringify(data));
-  } else {
-    alert("Uno o varios campos están vacíos");
-  }
-}
