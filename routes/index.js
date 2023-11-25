@@ -28,20 +28,23 @@ router.delete("/stock/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const { id, nombre, marca, cantidad, costo } = req.body;
-
-  const newComponent = {
-    id: id,
-    nombre: nombre,
-    marca: marca,
-    cantidad: cantidad,
-    costo: costo,
-  };
-
-  data.push(newComponent);
-
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
-
-  res.sendStatus(200);
+  if (!data.find((component) => component.id == id)) {
+    const newComponent = {
+      id: id,
+      nombre: nombre,
+      marca: marca,
+      cantidad: cantidad,
+      costo: costo,
+    };
+  
+    data.push(newComponent);
+  
+    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+  
+    res.sendStatus(200);
+  } else{
+    res.send(500)
+  }
 });
 
 router.put("/stock/:id", (req, res) => {
